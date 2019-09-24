@@ -15,17 +15,22 @@ section {
 }
 
 div.frame {
-    display: center;
-    width: auto;
-    height: auto;
-    margin: 10px;
+      display: flex;
+  flex-wrap: wrap;
+  padding: 4px;
     --aug-border: 1px;
     --aug-inset: 1px;
     padding: 10px;
     text-align: center;
     --aug-border-bg: gold;
     --aug-inset-bg: gold;
+    height: auto;
+    width: auto;
+    margin: 30px;
+    
 }
+
+
 
 div.fcolor {
     --aug-inset-opacity: 0.2;
@@ -81,7 +86,7 @@ body {
 #header-type {
     font-family: 'Turret Road', cursive;
     font-size: 20px;
-    color: black;
+    color: white;
     background-color: slategrey;
     /*    color: #7a71bb;*/
     /*
@@ -90,7 +95,6 @@ body {
     text-decoration-color: mediumpurple;
 */
     /*    border-bottom: solid 2px mediumpurple;*/
-    display: inline-block;
     padding: 10px;
 /*    padding-bottom: 4px;*/
 /*    position: relative;*/
@@ -193,6 +197,8 @@ th, td {
     font-family: 'Inconsolata', monospace;
 }
 
+
+
 mark.space1 {
     font-family: 'Turret Road', cursive;
     font-weight: bolder;
@@ -258,4 +264,72 @@ a:hover {
     padding: 20px;
     text-align: center;
 
+}
+
+.home-loc {
+    width: 400px;
+    height: 280px;
+    padding: 5px; margin: 0 auto; text-align: center; overflow: hidden;
+}
+
+.work-loc {
+    width: 400px;
+    height: 280px;
+    padding: 5px; margin: 0 auto; text-align: center; overflow: hidden;
+}
+
+.steps{
+        width: 400px;
+        height: 380px;
+        padding: 5px; margin: 0 auto; text-align: center; overflow: hidden;
+
+}
+
+/*
+#images{
+    text-align:center;
+    margin:50px auto; 
+}
+*/
+
+.caption {
+    text-align: left;
+    font-family: 'Turret Road', cursive;
+    padding: auto;
+    margin: auto;
+
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  flex: 50%;
+  padding: 28px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+.tumblr-post {
+    align-content: center
+}
+
+.image-p {
+    text-align: right;
+    margin-right: 50px;
+    font-style: italic;
+    white-space: pre;
+}
+
+.music {
+    width: 636px;
+    margin: 200px 200px 0 340px;
+    box-shadow: 1px 1px 5px 10px #888888;
 }
