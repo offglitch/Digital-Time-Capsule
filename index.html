@@ -12,16 +12,20 @@
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/augmented-ui/augmented.css">
 
     <!-- Custom styles for this template -->
     <link href="css/scrolling-nav.css" rel="stylesheet">
 
+    <script type="module">
+        import "https://unpkg.com/aug-attr-spliced/aug-attr-spliced.js"
+    </script>
+
 </head>
 
 <body>
-    
+
     <!-- Navigation -->
     <nav class="navbar navbar-dark" id="mainNav">
         <div class="container-fluid">
@@ -38,13 +42,13 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#landingpage">Landing Page</a>
+                        <a class="nav-link js-scroll-trigger" href="#landingpage">Briefing</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#services">Investigations</a>
+                        <a class="nav-link js-scroll-trigger" href="#first-page">Investigations</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#contact">Digital Neural Activity</a>
+                        <a class="nav-link js-scroll-trigger" href="#second-page">Digital Neural Activity</a>
                     </li>
                 </ul>
             </div>
@@ -53,65 +57,97 @@
 
     <header>
         <div class="frame fcolor" augmented-ui="r-clip-x bl-clip-x tl-clip-x exe">
-            <h1 id="header-type">A-3693</h1>
 
             <div class="row">
-                    <br>
+                <h1 id="header-type">A-3693</h1>
 
-                    <p id="p0"><mark class="space1">Space Corp.</mark>has located A-3693. <br> After two decades of research for top scouting recruits, we are happy to announce that A-3693 has been approved and selected to join the class of 2020.
-                    </p>
-                    <p class="header-p">
-                        &emsp;During our investigations regarding this individual, we were able to identify an array of Standardized Universal Law
-                        (<a class="sul" href="https://imgur.com/r/aww">S.U.L.</a>)
-                        unique traits within them early on in their life.
+                <p id="p0"><mark class="space1">Space Corp.</mark>has located A-3693. <br> After two decades of research for top scouting recruits, we are happy to announce that A-3693 has been approved and selected to join the class of 2020.
+                </p>
+                <p class="header-p">
+                    &emsp;During our investigations regarding this individual, we were able to identify an array of Standardized Universal Law
+                    (<a class="sul" href="https://imgur.com/r/aww">S.U.L.</a>)
+                    unique traits within them early on in their life.
 
-                        Due to their age, mental, and physical wellbeing, <mark class="space1">Space Corp.</mark>decided to allow this individual time to fully develop these traits without galactic interferences.
+                    Due to their age, mental, and physical wellbeing, <mark class="space1">Space Corp.</mark>decided to allow this individual time to fully develop these traits without galactic interferences.
 
 
-                        Within the span of four years, we noticed this individual’s digital presence slowly fading away. It was only after they have disappeared from the Intergalactic Web that Space Corp got alarmed and made it a priority to locate them.
+                    Within the span of four years, we noticed this individual’s digital presence slowly fading away. It was only after they have disappeared from the Intergalactic Web that Space Corp got alarmed and made it a priority to locate them.
 
-                        Thankfully, the individual resurfaced on the Intergalactic Web and we were able to trace some of their data for locating purposes. Scouting recruits at <mark class="space1">Space Corp.</mark>are hand selected, and are all unique human beings with very specific S.U.L. traits. These skills are not inherent within humans, and therefore, gaining them at a relatively young age is an uncommon phenomena that alerts us to locate, train and recruit such individuals.
-                    </p>
+                    Thankfully, the individual resurfaced on the Intergalactic Web and we were able to trace some of their data for locating purposes. Scouting recruits at <mark class="space1">Space Corp.</mark>are hand selected, and are all unique human beings with very specific S.U.L. traits. These skills are not inherent within humans, and therefore, gaining them at a relatively young age is an uncommon phenomena that alerts us to locate, train and recruit such individuals.
+                </p>
             </div>
 
         </div>
     </header>
 
-    <section class="landing-page">
-        <div class="container" id="sections">
+    <section id="landingpage">
+        <div class="frame fcolor1" augmented-ui="r-clip-y bl-clip-y exe">
             <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2 id="header-type">Briefing</h2>
-                    <p id="p1"> &emsp;Human A-3693, on multiple occasions, exhibited abilities that go well beyond the average human’s sensory capabilities, along with extraordinary awareness and adaptability skills. They are capable of combining both brain hemispheres, allowing them to examine situations from various perspectives, navigate linguistics seamlessly, and digest data at high rates. A lot of these traits can be attributed to this individual’s resourcefulness in overcoming the human test; they forcefully exposed themselves to the truth of the universe and preserved, regardless of how many times they were presented with cheat codes. </p>
-                </div>
+                <h2 id="header-type">Briefing</h2>
+                <p class="section-p"> &emsp;Human A-3693, on multiple occasions, exhibited abilities that go well beyond the average human’s sensory capabilities, along with extraordinary awareness and adaptability skills. They are capable of combining both brain hemispheres, allowing them to examine situations from various perspectives, navigate linguistics seamlessly, and digest data at high rates. A lot of these traits can be attributed to this individual’s resourcefulness in overcoming the human test; they forcefully exposed themselves to the truth of the universe and preserved, regardless of how many times they were presented with cheat codes. </p>
             </div>
         </div>
     </section>
 
-    <section>
-        <div class="container" id="sections">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2 id="header-type">Investegations</h2>
-                    <div>
-                     <img class="center" src="img/worldmap.png" alt="">
-                        <!--
-                    <div class="d3-geomap" id="map">
-                    <script src = "https://d3js.org/d3.v5.min.js"></script>
-
-                        <script>
-                            var map = d3.geomap()
-                                .geofile('/d3-geomap/topojson/world/countries.json')
-                                .draw(d3.select('#map'));
-                        </script> -->
-                    </div>
-                </div>
-                
+    <section id="first-page">
+        <div class="frame fcolor" augmented-ui="r-clip-y bl-clip-y exe">
+                <h2 class="invest">Investigations</h2>
+                <p class="centerp"> The following is a report of our findings regarding A-3693.</p>
+        <div class="container-fluid row center">
+            <div>
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Blood Type</th>
+                            <th scope="col">Usernames</th>
+                            <th scope="col">D.N.A.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Majid</th>
+                            <td>B+</td>
+                            <td>shizzshazz</td>
+                            <td>linkedin</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"></th>
+                            <td></td>
+                            <td>pysqotiqa</td>
+                            <td>goodreads</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"></th>
+                            <td></td>
+                            <td>sentientmind</td>
+                            <td>reddit</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"></th>
+                            <td></td>
+                            <td>clusterfunk</td>
+                            <td>last.fm</td>
+                        </tr>
+                         <tr>
+                            <th scope="row"></th>
+                            <td></td>
+                            <td>snuktooki</td>
+                            <td>tumblr</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+            </div>
+            <!--
+                <div>
+                    <img class="center" src="img/worldmap.png" alt="">
+                </div>
+-->
         </div>
     </section>
 
-    <section id="contact">
+    <section id="second-page">
         <div class="container" id="sections">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
@@ -140,9 +176,4 @@
     <!-- Custom JavaScript for this theme -->
     <script src="js/scrolling-nav.js"></script>
 
-</body>
-<script src="//unpkg.com/d3@5.9.2/dist/d3.min.js"></script>
-<script src="//unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
-<script src="/d3-geomap/d3-geomap.min.js"></script>
-
-</html>
+</body></html>
