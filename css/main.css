@@ -1,14 +1,31 @@
-@import url("https://fonts.googleapis.com/css?family=Space+Mono");
-@import url("https://fonts.googleapis.com/css?family=Share+Tech+Mono");
+@import url('https://fonts.googleapis.com/css?family=Turret+Road&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
+
 body {
-  background-color: black;
+  background-color: #0a0316;
+}
+
+.navbar {
+    background: url('../img/green_waves.gif') no-repeat center center;
+  background-size: cover;
+}
+
+a {
+    font-family: 'Turret Road', cursive;
+    font-size: 16px;
+    letter-spacing: 10px;
+}
+
+a:hover {
+    color: whitesmoke;
+    font-style: italic;
 }
 
 .wrapper {
   position: relative;
   padding: 30px 40px;
   max-width: 780px;
-  margin: 0 auto !important;
+  margin: 20px auto !important;
   min-height: 70vh;
   font-family: "Space Mono", monospace;
   font-family: "Share Tech Mono", monospace;
@@ -36,6 +53,16 @@ body {
   background-image: url(http://api.thumbr.it/whitenoise-300x300.png?background=0a2406ff&noise=142238&density=85&opacity=100);
 }
 
+mark.space1 {
+    font-family: 'Turret Road', cursive;
+    font-weight: bolder;
+    color: navajowhite;
+    background: none;
+    margin-right: 4px;
+    margin-left: -4px;
+
+}
+
 @keyframes noise {
   0% {
     background-image: url(http://api.thumbr.it/whitenoise-200x200.png?background=0a2406ff&noise=142238&density=85&opacity=100);
@@ -47,6 +74,7 @@ body {
     background-image: url(http://api.thumbr.it/whitenoise-200x190.png?background=0a2406ff&noise=142248&density=85&opacity=100);
   }
 }
+
 .wrapper:after {
   content: " ";
   position: absolute;
@@ -115,8 +143,12 @@ body {
     transform: translate3D(0, 600px, 0);
   }
 }
+
 h1 {
   padding: 0 10px;
   background-color: rgba(20, 40, 30, 0.8);
   border: 3px solid rgba(20, 40, 30, 0.8);
 }
+
+
+
