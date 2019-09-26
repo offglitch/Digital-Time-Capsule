@@ -215,17 +215,31 @@ th {
     padding: 28px;
 }
 
-.column img {
+#locations {
     margin-top: 8px;
     vertical-align: middle;
     width: 300px;
     height: 180px;
-
+    border: green 2px solid
 
 }
 
-.music {
-    margin: auto;
-    width: 550px;
-    height: 315px;
+#icons {
+    width: 120px;
+    height: 120px;
+    margin-top: 5px;
 }
+
+.container {
+  position: relative;
+  text-align: right;
+    font-style: italic;
+    
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
