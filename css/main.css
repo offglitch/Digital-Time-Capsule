@@ -162,12 +162,14 @@ section {
 h1 {
     padding: 0 10px;
     background-color: rgba(20, 40, 30, 0.8);
-    border: 3px solid rgba(20, 40, 30, 0.8);
+    border: 3px solid rgba(20, 40, 30, 0.8) inline;
+    display: inline-block;
+
 }
 
 a {
     font-family: 'Turret Road', cursive;
-    font-weight: 800px;
+    font-weight: bolder;
     letter-spacing: 10px;
 }
 
@@ -220,7 +222,7 @@ th {
     vertical-align: middle;
     width: 300px;
     height: 180px;
-    border: green 2px solid
+    border: green 2px solid;
 
 }
 
@@ -228,18 +230,51 @@ th {
     width: 120px;
     height: 120px;
     margin-top: 5px;
+    border: 1px solid limegreen;
+
+}
+
+#p-within-div {
+    text-align: center;
+    padding: 15px;
+    margin: 5px;
 }
 
 .container {
-  position: relative;
-  text-align: right;
+    position: relative;
+    text-align: right;
     font-style: italic;
-    
+
 }
 
 .bottom-left {
-  position: absolute;
-  bottom: 8px;
-  left: 16px;
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
 }
 
+.frame {
+    height: 500px;
+    line-height: 3em;
+    overflow: auto;
+    padding: 5px;
+    border: green 2px solid;
+}
+
+.frame::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.frame::-webkit-scrollbar:vertical {
+    width: 11px;
+}
+
+.frame::-webkit-scrollbar:horizontal {
+    height: 11px;
+}
+
+.frame::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 2px solid limegreen;
+    background-color: rgba(0, 0, 0, .5);
+}
