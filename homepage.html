@@ -1,70 +1,138 @@
 <!DOCTYPE HTML>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Digital Time Capsule</title>
+    <title>DIGITAL TIME CAPSULE</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['geochart'],
+            // Note: you will need to get a mapsApiKey for your project.
+            // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+            'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+        });
+        google.charts.setOnLoadCallback(drawRegionsMap);
+
+        function drawRegionsMap() {
+            var data = google.visualization.arrayToDataTable([
+                ['Country', 'Location'],
+                ['United States', 'San Francisco - Current Location'],
+                ['Saudi Arabia', 'Riyadh - Point of Origin']
+            ]);
+
+            var options = {
+                'backgroundColor': 'transparent'
+            };
+
+            var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+            chart.draw(data, options);
+        }
+
+    </script>
+
+    <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['corechart']
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['App', 'Hours per Day'],
+                ['Auto Chess', 3.2],
+                ['Safari', 3.9],
+                ['Messages', 2.2],
+                ['WhatsApp', 1.8],
+                ['Reddit', 1.5],
+                ['Spotify', 1.2],
+                ['Mail', 0.5],
+                ['Misc.', 2]
+            ]);
+
+            var options = {
+                title: 'Screen time: 16 hours & 25 minutes \n September 22nd - 30th',
+                is3D: true,
+                'backgroundColor': 'transparent',
+                fontName: 'Space Mono',
+                fontSize: '15',
+                titleTextStyle: {
+                    color: 'white'
+                },
+                legend: {
+                    textStyle: {
+                        color: 'white'
+                    }
+
+                },
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart.draw(data, options);
+        }
+
+    </script>
+
 </head>
 
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark">
-
-        <!-- Navbar brand -->
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Space Corporation</a>
-
-        <!-- Collapse button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Collapsible content -->
-        <div class="collapse navbar-collapse">
-
-            <!-- Links -->
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#landingpage">Briefing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#first-page">Investigation</a>
-                </li>
-                <li class="nav-item js-scroll-trigger">
-                    <a class="nav-link js-scroll-trigger" href="#second-page">D.N.A.</a>
-                </li>
-
-            </ul>
-
-        </div>
-        <!-- Collapsible content -->
-
-    </nav>
-    <!--/.Navbar-->
-
-    <div>
-        <section>
-            <div class="wrapper">
-                <div id="noise"></div>
-                <h1 class="animated infinite flash slower" id="h">A-3693 LOCATED</h1>
-                <div class="line"></div>
-                <p>After two decades of research for top scouting recruits, we are happy to announce that <br> A-3693 has been approved and selected to join the class of 2020.</p>
-                <p>During our investigations regarding this individual, we were able to identify an array of Standardized Universal Law
-                    (<a id="sul" href="https://imgur.com/r/aww">S.U.L.</a>)
-                    unique traits within them early on in their life
-                </p>
-                <p>Due to their age, mental, and physical wellbeing, <mark class="space1">Space Corp.</mark>decided to allow this individual time to fully develop these traits without galactic interferences.</p>
-                <p>Within the span of four years, we noticed this individual’s digital presence slowly fading away. It was only after they have disappeared from the Intergalactic Web that we got alarmed and made it a priority to locate them.</p>
-                <p>Thankfully, the individual resurfaced on the Intergalactic Web and we were able to trace some of their data for locating purposes. Scouting recruits at <mark class="space1">Space Corp.</mark>are hand selected, and are all unique human beings with very specific S.U.L. traits. These skills are not inherent within humans, and therefore, gaining them at a relatively young age is an uncommon phenomena that alerts us to locate, train and recruit such individuals.</p>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+            <a class="navbar-brand" href="#first">
+                Space Corporation</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#first">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#second">Briefing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#third">Investigations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#fourth">Coordinates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#fifth">D.N.A.</a>
+                    </li>
+                </ul>
             </div>
-        </section>
-    </div>
+        </div>
+    </nav>
+    <section id="first">
+        <div class="wrapper">
+            <div id="noise"></div>
+            <h1 class="animated infinite flash slower" id="h">A-3693</h1>
+            <div class="line"></div>
+            <p>After two decades of research for top scouting recruits, we are happy to announce that A-3693 has been approved and selected to join the class of 2020.</p>
+            <p>During our investigations regarding this individual, we were able to identify an array of Standardized Universal Law
+                (<a id="sul" href="https://imgur.com/r/aww">S.U.L.</a>)
+                unique traits within them early on in their life
+            </p>
+            <p>Due to their age, mental, and physical wellbeing, <mark class="space1">Space Corp.</mark>decided to allow this individual time to fully develop these traits without galactic interferences.</p>
+            <p>Within the span of four years, we noticed this individual’s digital presence slowly fading away. It was only after they have disappeared from the Intergalactic Web that we got alarmed and made it a priority to locate them.</p>
+            <p>Thankfully, the individual resurfaced on the Intergalactic Web and we were able to trace some of their data for locating purposes. Scouting recruits at <mark class="space1">Space Corp.</mark>are hand selected, and are all unique human beings with very specific S.U.L. traits. These skills are not inherent within humans, and therefore, gaining them at a relatively young age is an uncommon phenomena that alerts us to locate, train and recruit such individuals.</p>
+        </div>
+    </section>
 
-    <section id="landingpage">
+    <section id="second">
+
         <div class="wrapper">
             <div id="noise"></div>
             <h1 class="animated infinite flash slower" id="h">BRIEFING</h1>
@@ -77,20 +145,21 @@
         </div>
     </section>
 
-    <section id="first-page">
+    <section id="third">
         <div class="wrapper">
             <div id="noise"></div>
             <h1 class="animated infinite flash slower" id="h">INVESTIGATIONS</h1>
             <div class="line"></div>
             <p id="p-within-div">The following is a breakdown of our findings regarding A-3693. </p>
+
+
             <div class="row">
                 <div class="column">
-
                     <table>
                         <thead>
                             <tr>
-                                <th scope="col">Name</th>
-                                <th scope="col">Blood</th>
+                                <th scope="col">NAME</th>
+                                <th scope="col">BLOOD</th>
                                 <th scope="col">DOB</th>
                             </tr>
                         </thead>
@@ -108,11 +177,9 @@
                     <table>
                         <thead>
                             <tr>
-
-                                <th scope="col">Usernames</th>
-                                <th scope="col">D.N.A.</th>
-                                <th scope="col">Smartphone</th>
-
+                                <th scope="col">USRNMS</th>
+                                <th scope="col">SITES</th>
+                                <th scope="col">APPS</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -151,10 +218,13 @@
                 </div>
 
             </div>
+            <div id="regions_div" style="width: 700px; height: 300px;"></div>
+
+            <div id="piechart" style="width: 900px; height: 500px; align: left;"></div>
         </div>
     </section>
 
-    <section id="second-page">
+    <section id="fourth">
         <div class="wrapper">
             <div id="noise"></div>
             <h1 class="animated infinite flash slower" id="h">COORDINATES</h1>
@@ -165,9 +235,7 @@
                     <div class="container">
                         <img id="locations" src="img/home_sanfran.png" alt="">
                         <div class="bottom-left">Residence. San Francisco.</div>
-
                     </div>
-
                     <div class="container">
                         <img id="locations" src="img/home_japan.png" alt="">
                         <div class="bottom-left">Residence. Tokyo.</div>
@@ -179,59 +247,65 @@
                         <div class="bottom-left">Education. San Francisco.</div>
                     </div>
                     <div class="container">
-
                         <img id="locations" src="img/kalkul_office.png" alt="">
                         <div class="bottom-left">Office. Tokyo.</div>
-
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="second-page">
+    <section id="fifth">
         <div class="wrapper">
             <div id="noise"></div>
-            <h1 class="animated infinite flash slower" id="h">Digital Neural Activity</h1>
+            <h1 class="animated infinite flash slower" id="h">DIGITAL NEURAL ACTIVITY</h1>
             <div class="line"></div>
-            <p id="p-within-div">Recycled blog posts.</p>
-            <div class="row frame">
-                <div class="column">
 
-                    <div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/e4NfDe0giNUNkkAWK-6zsA/180963007657" data-did="27e59e281a34fd226ae15d471870eef015544d20"><a href="https://canvasparalysis.tumblr.com/post/180963007657/nemfrog-diagram-locates-the-senses-and-mind">https://canvasparalysis.tumblr.com/post/180963007657/nemfrog-diagram-locates-the-senses-and-mind</a></div>
-                    <script async src="https://assets.tumblr.com/post.js"></script>
 
-                    <div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/e4NfDe0giNUNkkAWK-6zsA/182481878357" data-did="da39a3ee5e6b4b0d3255bfef95601890afd80709"><a href="https://canvasparalysis.tumblr.com/post/182481878357">https://canvasparalysis.tumblr.com/post/182481878357</a></div>
-                    <script async src="https://assets.tumblr.com/post.js"></script>
-                    <div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/e4NfDe0giNUNkkAWK-6zsA/184315236382" data-did="da39a3ee5e6b4b0d3255bfef95601890afd80709"><a href="https://canvasparalysis.tumblr.com/post/184315236382">https://canvasparalysis.tumblr.com/post/184315236382</a></div>
-                    <script async src="https://assets.tumblr.com/post.js"></script>
-                    <div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/e4NfDe0giNUNkkAWK-6zsA/184661328492" data-did="da39a3ee5e6b4b0d3255bfef95601890afd80709"><a href="https://canvasparalysis.tumblr.com/post/184661328492">https://canvasparalysis.tumblr.com/post/184661328492</a></div>
-                    <script async src="https://assets.tumblr.com/post.js"></script>
 
+
+            <container>
+
+
+                <p id="p-within-div">Recycled blog posts.</p>
+                <div class="row frame">
+                    <div class="column">
+
+                        <div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/e4NfDe0giNUNkkAWK-6zsA/180963007657" data-did="27e59e281a34fd226ae15d471870eef015544d20"><a href="https://canvasparalysis.tumblr.com/post/180963007657/nemfrog-diagram-locates-the-senses-and-mind">https://canvasparalysis.tumblr.com/post/180963007657/nemfrog-diagram-locates-the-senses-and-mind</a></div>
+                        <script async src="https://assets.tumblr.com/post.js"></script>
+
+                        <div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/e4NfDe0giNUNkkAWK-6zsA/182481878357" data-did="da39a3ee5e6b4b0d3255bfef95601890afd80709"><a href="https://canvasparalysis.tumblr.com/post/182481878357">https://canvasparalysis.tumblr.com/post/182481878357</a></div>
+                        <script async src="https://assets.tumblr.com/post.js"></script>
+                        <div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/e4NfDe0giNUNkkAWK-6zsA/184315236382" data-did="da39a3ee5e6b4b0d3255bfef95601890afd80709"><a href="https://canvasparalysis.tumblr.com/post/184315236382">https://canvasparalysis.tumblr.com/post/184315236382</a></div>
+                        <script async src="https://assets.tumblr.com/post.js"></script>
+                        <div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/e4NfDe0giNUNkkAWK-6zsA/184661328492" data-did="da39a3ee5e6b4b0d3255bfef95601890afd80709"><a href="https://canvasparalysis.tumblr.com/post/184661328492">https://canvasparalysis.tumblr.com/post/184661328492</a></div>
+                        <script async src="https://assets.tumblr.com/post.js"></script>
+
+                    </div>
+                    <div class="column">
+                        <div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/e4NfDe0giNUNkkAWK-6zsA/184606771962" data-did="da39a3ee5e6b4b0d3255bfef95601890afd80709"><a href="https://canvasparalysis.tumblr.com/post/184606771962">https://canvasparalysis.tumblr.com/post/184606771962</a></div>
+                        <script async src="https://assets.tumblr.com/post.js"></script>
+                        <div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/e4NfDe0giNUNkkAWK-6zsA/184606769632" data-did="2aa90a1a7154a78fa89cbe84a66142b0f74d3751"><a href="https://canvasparalysis.tumblr.com/post/184606769632/nemfrog-a-table-top-recreation-of-angels">https://canvasparalysis.tumblr.com/post/184606769632/nemfrog-a-table-top-recreation-of-angels</a></div>
+                        <script async src="https://assets.tumblr.com/post.js"></script>
+
+                        <div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/e4NfDe0giNUNkkAWK-6zsA/184476949647" data-did="0af01ce43ae1800c61437bc3c3c9c8e35238032f"><a href="https://canvasparalysis.tumblr.com/post/184476949647/spacetalin-nick-gentry">https://canvasparalysis.tumblr.com/post/184476949647/spacetalin-nick-gentry</a></div>
+                        <script async src="https://assets.tumblr.com/post.js"></script>
+
+                        <div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/e4NfDe0giNUNkkAWK-6zsA/184563390107" data-did="c2f8a93b248864437dd97bd2293793996821f887"><a href="https://canvasparalysis.tumblr.com/post/184563390107/dadalux-welder-wings">https://canvasparalysis.tumblr.com/post/184563390107/dadalux-welder-wings</a></div>
+                        <script async src="https://assets.tumblr.com/post.js"></script>
+                    </div>
                 </div>
-                <div class="column">
-                    <div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/e4NfDe0giNUNkkAWK-6zsA/184606771962" data-did="da39a3ee5e6b4b0d3255bfef95601890afd80709"><a href="https://canvasparalysis.tumblr.com/post/184606771962">https://canvasparalysis.tumblr.com/post/184606771962</a></div>
-                    <script async src="https://assets.tumblr.com/post.js"></script>
-                    <div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/e4NfDe0giNUNkkAWK-6zsA/184606769632" data-did="2aa90a1a7154a78fa89cbe84a66142b0f74d3751"><a href="https://canvasparalysis.tumblr.com/post/184606769632/nemfrog-a-table-top-recreation-of-angels">https://canvasparalysis.tumblr.com/post/184606769632/nemfrog-a-table-top-recreation-of-angels</a></div>
-                    <script async src="https://assets.tumblr.com/post.js"></script>
+            </container>
 
-                    <div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/e4NfDe0giNUNkkAWK-6zsA/184476949647" data-did="0af01ce43ae1800c61437bc3c3c9c8e35238032f"><a href="https://canvasparalysis.tumblr.com/post/184476949647/spacetalin-nick-gentry">https://canvasparalysis.tumblr.com/post/184476949647/spacetalin-nick-gentry</a></div>
-                    <script async src="https://assets.tumblr.com/post.js"></script>
-
-                    <div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/e4NfDe0giNUNkkAWK-6zsA/184563390107" data-did="c2f8a93b248864437dd97bd2293793996821f887"><a href="https://canvasparalysis.tumblr.com/post/184563390107/dadalux-welder-wings">https://canvasparalysis.tumblr.com/post/184563390107/dadalux-welder-wings</a></div>
-                    <script async src="https://assets.tumblr.com/post.js"></script>
-                </div>
-            </div>
             <p id="p-within-div">Music tracked since 2010.</p>
 
             <div class="row">
                 <table>
                     <thead class="thead-light">
                         <tr>
-                            <th scope="col">Artists</th>
-                            <th scope="col">Songs</th>
-                            <th scope="col">Albums</th>
+                            <th scope="col">ARTISTS</th>
+                            <th scope="col">SONGS</th>
+                            <th scope="col">ALBUMS</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -245,27 +319,71 @@
             </div>
             <br>
             <container>
+                <p id="p-within-div">Artists on repeat.</p>
+
                 <div class="row">
                     <div class="column">
-                        <img id="icons" src="https://lastfm-img2.akamaized.net/i/u/avatar300s/61a2ebaeea774572ad58a2dd007946f8.webp" alt="hiatus kaiyote">
-                        <img id="icons" src="https://lastfm.freetls.fastly.net/i/u/avatar300s/8f804fbddd327c963d56c3a1eb51e9ca.webp" alt="vulfpeck">
-                        <img id="icons" src="https://lastfm-img2.akamaized.net/i/u/avatar300s/13e9899af85422c6eb37df56ba5c95f2.webp" alt="thundercat">
-                        <img id="icons" src="https://lastfm-img2.akamaized.net/i/u/avatar300s/f9a1af68f2b954594581761d4b1e8d46.webp" alt="animals as leaders">
-                        <img id="icons" src="https://lastfm-img2.akamaized.net/i/u/avatar300s/184ac6c0550ed68253a15f2e8bcddfbd.webp" alt="thom yorke">
-                        <img id="icons" src="                    https://lastfm.freetls.fastly.net/i/u/avatar300s/45805b989cfb627f5f75ec25dddacd2b.webp" alt="beach house">
-                        <img id="icons" src="https://lastfm-img2.akamaized.net/i/u/avatar300s/dab2f0f68e74f3498d6dca96d8ec6e93.webp" alt="arctic monkeys">
-
-                        <img id="icons" src="https://lastfm.freetls.fastly.net/i/u/avatar300s/db65ba4a86613c53d884dcd78eda5320.webp" alt="yeah yeah yeahs">
-
-                        <img id="icons" src="https://lastfm-img2.akamaized.net/i/u/avatar300s/5c19ccd2db004e19a890ae2ee6931013.webp" alt="the beatles">
-
-                        <img id="icons" src="https://lastfm-img2.akamaized.net/i/u/ar0/98007de27dc09a45e3e049b643ea605d.webp" alt="tool">
+                        <a href="http://hiatuskaiyote.com/">
+                            <img id="icons" src="https://lastfm-img2.akamaized.net/i/u/avatar300s/61a2ebaeea774572ad58a2dd007946f8.webp" alt="hiatus kaiyote">
+                        </a>
+                        <a href="https://vulfpeck.com/">
+                            <img id="icons" src="https://lastfm.freetls.fastly.net/i/u/avatar300s/8f804fbddd327c963d56c3a1eb51e9ca.webp" alt="vulfpeck">
+                        </a>
+                        <a href="https://ninjatune.net/artist/thundercat">
+                            <img id="icons" src="https://lastfm-img2.akamaized.net/i/u/avatar300s/13e9899af85422c6eb37df56ba5c95f2.webp" alt="thundercat">
+                        </a>
+                        <a href="https://www.animalsasleaders.org/">
+                            <img id="icons" src="https://lastfm-img2.akamaized.net/i/u/avatar300s/f9a1af68f2b954594581761d4b1e8d46.webp" alt="animals as leaders">
+                        </a>
+                        <a href="https://www.npr.org/2019/07/19/743595967/thom-yorke-recalibrates-and-digs-deeper-into-his-dread-of-technology-with-anima">
+                            <img id="icons" src="https://lastfm-img2.akamaized.net/i/u/avatar300s/184ac6c0550ed68253a15f2e8bcddfbd.webp" alt="thom yorke">
+                        </a>
+                        <a href="http://www.beachhousebaltimore.com/">
+                            <img id="icons" src="                    https://lastfm.freetls.fastly.net/i/u/avatar300s/45805b989cfb627f5f75ec25dddacd2b.webp" alt="beach house">
+                        </a>
+                        <a href="https://www.arcticmonkeys.com/">
+                            <img id="icons" src="https://lastfm-img2.akamaized.net/i/u/avatar300s/dab2f0f68e74f3498d6dca96d8ec6e93.webp" alt="arctic monkeys">
+                        </a>
+                        <a href="https://www.yeahyeahyeahs.com/">
+                            <img id="icons" src="https://lastfm.freetls.fastly.net/i/u/avatar300s/db65ba4a86613c53d884dcd78eda5320.webp" alt="yeah yeah yeahs">
+                        </a>
+                        <a href="https://www.thebeatles.com/">
+                            <img id="icons" src="https://lastfm-img2.akamaized.net/i/u/avatar300s/5c19ccd2db004e19a890ae2ee6931013.webp" alt="the beatles">
+                        </a>
+                        <a href="https://toolband.com/">
+                            <img id="icons" src="https://lastfm-img2.akamaized.net/i/u/ar0/98007de27dc09a45e3e049b643ea605d.webp" alt="tool">
+                        </a>
                     </div>
                 </div>
             </container>
+
+            <p id="p-within-div">Photo sharing.</p>
+                <div class="row frame">
+                    <div class="column">
+
+                        
+                        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/B07_BqVHfKO/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="12" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/B07_BqVHfKO/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;"> View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div></a> <p style=" margin:8px 0 0 0; padding:0 4px;"> <a href="https://www.instagram.com/p/B07_BqVHfKO/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_blank">here I listened to tool’s fear inoculum. I was floating in zen</a></p> <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">A post shared by @<a href="https://www.instagram.com/clustrfunk/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;" target="_blank"> clustrfunk</a> on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2019-08-09T08:54:40+00:00">Aug 9, 2019 at 1:54am PDT</time></p></div></blockquote> <script async src="//www.instagram.com/embed.js"></script>
+                        
+                        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/B0zzpKhHD__/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="12" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/B0zzpKhHD__/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;"> View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div></a> <p style=" margin:8px 0 0 0; padding:0 4px;"> <a href="https://www.instagram.com/p/B0zzpKhHD__/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_blank">The Creation of Adam v2</a></p> <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">A post shared by @<a href="https://www.instagram.com/clustrfunk/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;" target="_blank"> clustrfunk</a> on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2019-08-06T04:41:16+00:00">Aug 5, 2019 at 9:41pm PDT</time></p></div></blockquote> <script async src="//www.instagram.com/embed.js"></script>
+                        
+                        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/B0v2Ej0HwaE/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="12" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/B0v2Ej0HwaE/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;"> View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div></a> <p style=" margin:8px 0 0 0; padding:0 4px;"> <a href="https://www.instagram.com/p/B0v2Ej0HwaE/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_blank">⽕⿃</a></p> <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">A post shared by @<a href="https://www.instagram.com/clustrfunk/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;" target="_blank"> clustrfunk</a> on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2019-08-04T15:45:32+00:00">Aug 4, 2019 at 8:45am PDT</time></p></div></blockquote> <script async src="//www.instagram.com/embed.js"></script>
+
+                    </div>
+                    <div class="column">
+                      
+                        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/B0eB1-FnPFF/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="12" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/B0eB1-FnPFF/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;"> View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div></a> <p style=" margin:8px 0 0 0; padding:0 4px;"> <a href="https://www.instagram.com/p/B0eB1-FnPFF/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_blank">lots of friends, the best banana bread, new art &amp; artists, pure air, good vibes and tons of fun ✨</a></p> <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">A post shared by @<a href="https://www.instagram.com/clustrfunk/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;" target="_blank"> clustrfunk</a> on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2019-07-28T17:42:04+00:00">Jul 28, 2019 at 10:42am PDT</time></p></div></blockquote> <script async src="//www.instagram.com/embed.js"></script>
+                        
+                   
+                        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/BwBN_6vnbgN/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="12" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/BwBN_6vnbgN/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;"> View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div></a> <p style=" margin:8px 0 0 0; padding:0 4px;"> <a href="https://www.instagram.com/p/BwBN_6vnbgN/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_blank">Don’t let an algorithm dictate your life</a></p> <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">A post shared by @<a href="https://www.instagram.com/clustrfunk/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;" target="_blank"> clustrfunk</a> on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2019-04-09T03:04:44+00:00">Apr 8, 2019 at 8:04pm PDT</time></p></div></blockquote> <script async src="//www.instagram.com/embed.js"></script>
+
+                    </div>
+                </div>
+
 
         </div>
     </section>
 
 
-</body></html>
+</body>
+
+</html>

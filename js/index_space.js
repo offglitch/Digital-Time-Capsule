@@ -1,3 +1,10 @@
+CSS.registerProperty({
+	name: '--p', 
+	syntax: '<integer>', 
+	initialValue: 0, 
+	inherits: true
+})
+
 const h1 = document.getElementById("h")
 
 const setShadow = () => {

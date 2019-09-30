@@ -2,9 +2,23 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
 @import url("https://fonts.googleapis.com/css?family=Space+Mono");
 @import url("https://fonts.googleapis.com/css?family=Share+Tech+Mono");
+@import "https://designmodo.github.io/Flat-UI/dist/css/flat-ui.min.css";
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css";
+/*@import "https://daneden.github.io/animate.css/animate.min.css";*/
 
-body {
-    background-color: black;
+body{
+  box-sizing: border-box;
+  background-color: #000000;
+  background-image: radial-gradient(black, #041607), url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Inconsolata', Helvetica, sans-serif;
+  font-size: 1.5rem;
+  text-shadow:
+      0 0 1ex rgba(51, 255, 51, 0.6),
+      0 0 1px rgba(255, 255, 255, 0.5);
+      position: relative;
+  overflow-x: hidden;
 }
 
 section {
@@ -12,10 +26,14 @@ section {
 }
 
 .navbar {
-    background: url('../img/green_waves.gif') no-repeat center center;
-    background-size: cover;
+    font-family: "Turret Road";
+    background: url('../img/green_waves.gif') no-repeat center;
+    background-size: cover; 
+    box-shadow: inset 0px 0px 100px 0px #121b14;
+     text-shadow:
+      0 0 2ex rgba(100, 255, 51),
+      0 0 2px rgba(255, 255, 255, 0.5);
 }
-
 
 .wrapper {
     position: relative;
@@ -32,7 +50,9 @@ section {
     color: #78cd6e;
     background-color: #121b14;
     background-image: linear-gradient(transparent 50%, rgba(10, 15, 8, 0.1) 50%), radial-gradient(transparent 65%, rgba(2, 10, 1, 0.6) 100%);
-    background-size: 15px, 100%;
+    /*    background-size: 15px, 100%;*/
+    border-radius: 2rem;
+    border: 0.1rem solid;
 }
 
 
@@ -155,23 +175,34 @@ section {
     }
 
     100% {
-        transform: translate3D(0, 600px, 0);
+        transform: translate3D(0, 1500px, 0);
     }
 }
 
 h1 {
     padding: 0 10px;
-    background-color: rgba(20, 40, 30, 0.8);
+    /*    background-color: rgba(20, 40, 30, 0.8);*/
     border: 3px solid rgba(20, 40, 30, 0.8) inline;
     display: inline-block;
 
 }
 
 a {
-    font-family: 'Turret Road', cursive;
+    font-family: 'Share Tech Mono";
     font-weight: bolder;
-    letter-spacing: 10px;
+    letter-spacing: 7px;
+    color: white;
 }
+
+/*
+
+.wrapper a:active,
+a:focus,
+a:hover {
+    color: bisque;
+}
+
+*/
 
 mark.space1 {
     font-family: 'Turret Road', cursive;
@@ -249,12 +280,13 @@ th {
 
 .bottom-left {
     position: absolute;
-    bottom: 8px;
-    left: 16px;
+    bottom: -1px;
+    left: 19px;
+    background: rgba(0, 0, 0, 0.6);
 }
 
 .frame {
-    height: 500px;
+    height: 700px;
     line-height: 3em;
     overflow: auto;
     padding: 5px;
@@ -277,4 +309,10 @@ th {
     border-radius: 8px;
     border: 2px solid limegreen;
     background-color: rgba(0, 0, 0, .5);
+}
+
+
+.instagram-media {
+              transform: scale(0.8);
+
 }
