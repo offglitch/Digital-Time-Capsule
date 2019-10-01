@@ -1,0 +1,26 @@
+body{
+    background-color: black;
+}
+
+.center {
+
+    text-align:center;
+}
+video {
+  width: 80%;
+  height: 70%;
+}
+
+a {
+  color: green;
+  text-decoration:none;
+    
+}
+
+a::before {
+  content: "[";
+}
+
+a::after {
+  content: "]";
+}
